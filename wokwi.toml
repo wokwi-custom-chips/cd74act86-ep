@@ -1,0 +1,8 @@
+[wokwi]
+version = 0.1
+elf = 'test/logic/build/arduino.avr.uno/logic.ino.elf'
+firmware = 'test/logic/build/arduino.avr.uno/logic.ino.hex'
+
+[[chip]]
+name = 'cd74act86-ep'
+binary = 'dist/chip.wasm'

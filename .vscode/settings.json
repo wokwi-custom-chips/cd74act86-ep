@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/workspaces/cd74act86-ep/dist",
+            "binaryPath": "/workspaces/cd74act86-ep/dist/chip.wasm",
+            "binaryArgs": []
+        }
+    ]
+}
