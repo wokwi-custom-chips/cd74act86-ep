@@ -22,7 +22,7 @@ typedef struct {
 } chip_state_t;
 
 
-static void set_xor(chip_state_t *chip) {
+static void set_logic(chip_state_t *chip) {
   pin_write(chip->pin_1Y, ( pin_read(chip->pin_1A) ^ pin_read(chip->pin_1B) )  );
   pin_write(chip->pin_2Y, ( pin_read(chip->pin_2A) ^ pin_read(chip->pin_2B) )  );
   pin_write(chip->pin_3Y, ( pin_read(chip->pin_3A) ^ pin_read(chip->pin_3B) )  );
@@ -31,7 +31,7 @@ static void set_xor(chip_state_t *chip) {
 
 static void chip_pin_change(void *user_data, pin_t pin, uint32_t value) {
   chip_state_t *chip = (chip_state_t*)user_data;
-  set_xor(chip);
+  set_logic(chip);
 }
 
 void chip_init() {
@@ -85,6 +85,6 @@ void chip_init() {
   pin_watch(chip->pin_4A, &config);
   pin_watch(chip->pin_4B, &config);  
 
-  set_xor(chip);
+  set_logic(chip);
 
 }
